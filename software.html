@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Projects - Pranav Murali</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('ba.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            color: #ffc70fe5;
+            font-weight: bolder;
+            font-size: large;
+        }
+        .container {
+            width: 60%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        header {
+            color: black;
+            text-align: center;
+            font-weight: bolder;
+            border-bottom: #34b98d 3px solid;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .project {
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .project h2 {
+            margin: 0;
+            font-size: 1.8em;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        .project h2 span {
+            margin-right: 10px;
+            font-size: 1.2em;
+            transition: transform 0.3s ease;
+        }
+        .description {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background: #e2e7a1e5;
+            color: black;
+            border-radius: 5px;
+            font-size: small;
+            font-weight: lighter;
+        }
+        .rotate {
+            transform: rotate(90deg);
+        }
+        .home-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            color: #ffc70fe5;
+            font-size: large;
+            font-weight: bolder;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .bold-text {
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function toggleDescription(id) {
+            var desc = document.getElementById(id);
+            var arrow = desc.previousElementSibling.querySelector('span');
+            if (desc.style.display === "none") {
+                desc.style.display = "block";
+                arrow.classList.add('rotate');
+            } else {
+                desc.style.display = "none";
+                arrow.classList.remove('rotate');
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Software Projects</h1>
+        </div>
+    </header>
+    <div class="container">
+        <div class="project">
+            <h2 onclick="toggleDescription('project1')"><span>▼</span>Project 1: Secured Authentication Process for Physically Challenged People Using Morse Code and Machine Learning Algorithm</h2>
+            <div id="project1" class="description">
+                <p><span class="bold-text">Objective:</span> Developed a secure and accessible authentication system for individuals with motor disabilities using eye blinks to input Morse code as passwords.<br>
+                    <span class="bold-text">Technologies Used:</span> Implemented Haar Cascade algorithm for facial and eye detection, and Dlib library for tracking facial points and eye aspect ratio (EAR).<br>
+                    <span class="bold-text">Features:</span> Created a virtual keyboard for Morse code input controlled by eye blinks, enabling contactless password entry.<br>
+                    <span class="bold-text">Challenges Addressed:</span> Tackled issues such as time consumption of Morse code entry, visibility under low light conditions, and usability for individuals with partial blindness.<br>
+                    <span class="bold-text">Achievements:</span> Achieved high accuracy in real-time eye tracking and Morse code conversion, enhancing security and usability for physically challenged users.<br> <a href="https://github.com/mpranav38/Secured-Authentication-Process-for-Physically-Challenged-People-Using-Morse-Code-and-ML-Algorithms" target="_blank">View on GitHub</a></p>
+            </div>
+        </div>
+        <div class="project">
+            <h2 onclick="toggleDescription('project2')"><span>▼</span>Project 2: Portfolio website</h2>
+            <div id="project2" class="description">
+                <p><span class="bold-text">Objective:</span> Created a portfolio website to showcase projects, skills, and background, providing a professional interface for potential employers and collaborators.<br>
+                    <span class="bold-text">Features:</span><br>
+                    <span class="bold-text">Navigation:</span> Includes a navigation bar with links to 'About Me', 'Education', 'Projects', 'Skills', and 'Contact' sections.<br>
+                    <span class="bold-text">Profile Photo:</span> Displays a profile photo of Pranav Murali.<br>
+                    <span class="bold-text">About Me:</span> Introduces Pranav Murali, highlighting his passion for software development and his ability to solve complex problems.<br>
+                    <span class="bold-text">Education:</span> Lists educational background with detailed information about degrees from Illinois Institute of Technology and Jain University.<br>
+                    <span class="bold-text">Projects:</span> Provides buttons to view detailed pages for Software, Cloud, and Database projects.<br>
+                    <span class="bold-text">Skills:</span> Showcases a variety of technical skills including programming languages, tools, and technologies such as Flutter, Dart, Machine Learning, Java, HTML & CSS, C Programming, Python, Cloud Computing, and more.<br>
+                    <span class="bold-text">Contact:</span> Offers contact information, including email and LinkedIn profile link.<br>
+                    <span class="bold-text">Design and Implementation:</span><br>
+                    <span class="bold-text">Layout:</span> The website is designed to fit within a 1280x720 pixel resolution window without overflow.<br>
+                    <span class="bold-text">Styling:</span> Uses CSS for styling, including a background image, font styles, and responsive design elements.<br>
+                    <span class="bold-text">Interactivity:</span> Includes interactive elements such as buttons to show more details and navigation links.<br>
+                    <span class="bold-text">Responsiveness:</span> Ensures the website is accessible and visually appealing on different devices and screen sizes.<br>
+                    <span class="bold-text">Technologies Used:</span> HTML, CSS, JavaScript.<br> <a href="https://github.com/mpranav38/portfolio" target="_blank">View on GitHub</a></p>
+            </div>
+        </div>
+        <div class="project">
+            <h2 onclick="toggleDescription('project3')"><span>▼</span>Project 3: eBook Application</h2>
+            <div id="project3" class="description">
+                <p><span class="bold-text">Objective:</span> Developed a feature-rich eBooks application with capabilities to download, read, and manage eBooks.<br>
+                    <span class="bold-text">Features:</span> Implemented functionalities to download eBooks, read them, manage favorites, toggle dark mode, and swipe to delete downloads.<br>
+                    <span class="bold-text">Technologies Used:</span> Utilized Riverpod for state management, Sembast for storing favorites and downloads, XML2JSON for data conversion, DIO for network calls and file downloads, and Iridium Reader for epub reading.<br>
+                    <span class="bold-text">User Experience:</span> Designed a user-friendly interface with both light and dark modes, providing a seamless reading experience.<br>
+                    <span class="bold-text">Data Management:</span> Employed a NoSQL database for efficient storage and retrieval of eBook data and user preferences.<br> <a href="https://github.com/mpranav38/EBook-using-Flutter" target="_blank">View on GitHub</a></p>
+            </div>
+        </div>
+        <div class="project">
+            <h2 onclick="toggleDescription('project4')"><span>▼</span>Project 4: Single-Player Yahtzee Game</h2>
+            <div id="project4" class="description">
+                <p><span class="bold-text">Objective:</span> Developed a Flutter-based single-player Yahtzee game as a non-trivial, single-page application using stateful widgets and state management techniques.<br>
+                    <span class="bold-text">Features:</span><br>
+                    <span class="bold-text">Dice Roll:</span> Implemented rolling dice and updating their values, including a function for calculating dice score.<br>
+                    <span class="bold-text">Score Calculation:</span> Incorporated a scorecard to calculate points based on dice combinations and user selections.<br>
+                    <span class="bold-text">UI Design:</span> Designed a user interface with separate containers for the main game, dice display, and scorecard.<br>
+                    <span class="bold-text">Compatibility:</span> Ensured proper display and functionality within a 720p resolution window.<br> <a href="https://github.com/mpranav38/Yathzee-Game-using-Flutter" target="_blank">View on GitHub</a></p>
+            </div>
+        </div>
+        <div class="project">
+            <h2 onclick="toggleDescription('project5')"><span>▼</span>Project 5: Airport Management Database</h2>
+            <div id="project5" class="description">
+                <p><span class="bold-text">Objective:</span> Developed an airport management database system using PHP to manage flight details, timings, and user login.<br>
+                    <span class="bold-text">Flight Details:</span> Stored and managed flight information, including flight numbers, destinations, departure times, and arrival times.<br>
+                    <span class="bold-text">Timings Management:</span> Tracked and updated flight schedules with accurate departure and arrival times.<br>
+                    <span class="bold-text">User Authentication:</span> Implemented a login page for secure access to the management system.<br>
+                    <span class="bold-text">User Interaction:</span><br>
+                    <span class="bold-text">Login Page:</span> Allowed users to log in with credentials to access the management system.<br>
+                    <span class="bold-text">Flight Management:</span> Provided a user interface to view, add, edit, and delete flight details and timings.<br>
+                    <span class="bold-text">Implementation Details:</span><br>
+                    <span class="bold-text">Database Structure:</span> Created a MySQL database with tables for users and flights.<br>
+                    <span class="bold-text">PHP and MySQL:</span> Used PHP for server-side scripting and MySQL for the database to manage flight details and user authentication.<br>
+                    <span class="bold-text">HTML and CSS:</span> Designed the user interface with HTML and CSS for the login page and flight management forms.<br>
+                    <span class="bold-text">Security:</span> Ensured secure login by hashing passwords and protecting against SQL injection.<br> <a href="https://github.com/mpranav38/Airport-Management-Database" target="_blank">View on GitHub</a></p>
+            </div>
+        </div>
+        <div class="project">
+            <h2 onclick="toggleDescription('project6')"><span>▼</span>Project 6: Battleships Game Application using Flutter and RESTful API</h2>
+            <div id="project6" class="description">
+                <p><span class="bold-text">Objective:</span> Developed a Flutter application interfacing with a RESTful service to allow user registration, login, and playing Battleships against human and computer opponents.<br>
+                    <span class="bold-text">Features:</span> Implemented user authentication, session management, game listing, game initialization, and gameplay functionalities.<br>
+                    <span class="bold-text">Technologies Used:</span> Utilized Flutter for UI, HTTP package for asynchronous operations, and Shared Preferences for session token management.<br>
+                    <span class="bold-text">Game Mechanics:</span> Designed a 5x5 game board for ship placement, allowing users to place ships, submit moves, and track game status and progress.<br>
+                    <span class="bold-text">Responsiveness:</span> Ensured application responsiveness across different screen sizes and managed asynchronous operations efficiently to avoid UI blocking.<br> <a href="https://github.com/mpranav38/Battleship-Game-using-Flutter" target="_blank">View on GitHub</a></p>
+            </div>
+        </div>
+        <a href="index.html" class="home-button">Home</a>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Projects - Pranav Murali</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('ba.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            color: #ffc70fe5;
+            font-weight: bolder;
+            font-size: large;
+        }
+        .container {
+            width: 60%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        header {
+            color: black;
+            text-align: center;
+            font-weight: bolder;
+            border-bottom: #34b98d 3px solid;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .project {
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .project h2 {
+            margin: 0;
+            font-size: 1.8em;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        .project h2 span {
+            margin-right: 10px;
+            font-size: 1.2em;
+            transition: transform 0.3s ease;
+        }
+        .description {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background: #e2e7a1e5;
+            color: black;
+            border-radius: 5px;
+            font-size: small;
+            font-weight: lighter;
+        }
+        .rotate {
+            transform: rotate(90deg);
+        }
+        .home-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            color: #ffc70fe5;
+            font-size: large;
+            font-weight: bolder;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .bold-text {
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function toggleDescription(id) {
+            var desc = document.getElementById(id);
+            var arrow = desc.previousElementSibling.querySelector('span');
+            if (desc.style.display === "none") {
+                desc.style.display = "block";
+                arrow.classList.add('rotate');
+            } else {
+                desc.style.display = "none";
+                arrow.classList.remove('rotate');
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Cloud Projects</h1>
+        </div>
+    </header>
+    <div class="container">
+        <div class="project">
+            <h2 onclick="toggleDescription('project1')"><span>▼</span>Project 1: Linux and Computer Systems</h2>
+            <div id="project1" class="description">
+                <p><span class="bold-text">Objective:</span> The project aimed to gain practical experience in setting up virtual machines, installing and configuring Linux, and performing basic system administration tasks, alongside scripting and data analysis.<br>
+                    <span class="bold-text">Technologies Used:</span> Oracle VirtualBox, Ubuntu 18.04 LTS, BASH scripting, Python (Matplotlib), and various essential Linux commands were employed to complete the project tasks.<br>
+                    <span class="bold-text">Achievements:</span> Successfully configured virtual machines, implemented security measures, wrote BASH scripts for data generation and sorting, and visualized performance data using Python.<br>
+                    <span class="bold-text">Challenges Addressed:</span> The project tackled challenges in VM setup, Linux installation, scripting for large datasets, and accurate performance measurement.<br>
+                    <span class="bold-text">Outcome:</span>The project provided essential hands-on experience in VM setup, Linux administration, and automation with BASH, laying a strong foundation for future system administration tasks.<br> <a href="https://github.com/mpranav38/Linux-and-Computer-Systems" target="_blank">View on GitHub</a></p>
+            </div>
+        </div>
+        <div class="project">
+            <h2 onclick="toggleDescription('project2')"><span>▼</span>Project 2: Benchmarking – BareMetal, Containers, and Virtual Machines</h2>
+            <div id="project2" class="description">
+                <p><span class="bold-text">Objective:</span> To evaluate the performance and scalability of bare metal, containerized, and virtualized environments through strong scaling studies, providing insights into their respective overheads.<br>
+                    <span class="bold-text">Technologies Used:</span>Sysbench and iPerf for benchmarking,Bash scripting and tmux/screen for automation,Python for data analysis and visualization.<br>
+                    <span class="bold-text">Achievements:</span> Successfully conducted a series of strong scaling studies across different virtualization technologies.
+                    Analyzed and visualized the performance data, leading to a clear understanding of virtualization overheads.<br>
+                    <span class="bold-text">Challenges Addressed:</span> Overcoming the complexity of setting up consistent benchmarking environments across different types of virtualization.
+                    Dealing with the intricacies of scaling workloads and accurately measuring performance across multiple threads.<br>
+                    <span class="bold-text">Outcome:</span> The project provided a comprehensive comparison of the performance overheads associated with different virtualization technologies, highlighting how containers, virtual machines, and bare metal setups perform under various workloads. It also offered insights into the scalability of these environments, helping to identify the most efficient setup for specific use cases.<br> <a href="https://github.com/mpranav38/Benchmarking-BareMetal-Containers-and-Virtual-Machines" target="_blank">View on GitHub</a></p>
+            </div>
+        </div>
+        <div class="project">
+            <h2 onclick="toggleDescription('project3')"><span>▼</span>Project 3: Understanding the Cost of Cloud Computing	</h2>
+            <div id="project3" class="description">
+                <p><span class="bold-text">Objective:</span>This project aims to assess the costs and profitability of cloud computing versus private cloud infrastructure for a startup company across three configurations: Hadoop/Spark cluster, MacOS application development, and Ethereum cryptocurrency.                   <span class="bold-text">Features:</span> Implemented functionalities to download eBooks, read them, manage favorites, toggle dark mode, and swipe to delete downloads.<br>
+                    <span class="bold-text">Technologies Used:</span> The project utilizes AWS calculators, ThinkMate for server pricing, Apple Website for Mac Mini pricing, and cryptocurrency mining calculators to estimate costs and profitability.<br>
+                    <span class="bold-text">Challenges Addressed:</span> The key challenges include accurately estimating cloud and hardware costs, analyzing cryptocurrency mining profitability, and determining whether renting or buying infrastructure is more cost-effective.<br>
+                    <span class="bold-text">Outcome</span> The project will produce a detailed report comparing the 5-year costs and profitability of public cloud services (AWS) versus private cloud infrastructure, providing a recommendation on the best investment strategy.<br> <a href="https://github.com/mpranav38/Understanding-the-Cost-of-Cloud-Computing" target="_blank">View on GitHub</a></p>
+            </div>
+        </div>
+        <div class="project">
+            <h2 onclick="toggleDescription('project4')"><span>▼</span>Project 4:Benchmarking Memory & Storage </h2>
+            <div id="project4" class="description">
+                <p><span class="bold-text">Objective:</span> Developed a benchmarking tool to evaluate memory and storage performance using the BLAKE3 hashing algorithm.<br>
+                    <span class="bold-text">Technologies Used: </span>Python/Rust, BLAKE3, STL, Boost, PThread, OMP, Linux, Chameleon.<br>
+                    <span class="bold-text">Key Responsibilities:</span><br>
+                    <span class="bold-text"></span> Implemented file I/O operations and parallel processing using threads.<br>
+                    Generated and sorted BLAKE3 hashes, storing them in a binary file.<br>
+                    Conducted performance evaluations with various configurations of memory and thread counts.<br>
+                    Automated experiments using bash scripts and analyzed results to identify optimal configurations.<br>
+                    <span class="bold-text">Challenges Faced:
+                    </span> <br>
+                    <span class="bold-text"></span> Ensuring efficient parallel processing and synchronization across multiple threads.<br>
+                    Managing memory usage effectively to handle large datasets.<br>
+                    Optimizing the performance of hash generation, sorting, and disk writing operations.<br> 
+                    <span class="bold-text">Outcome: </span> Successfully identified the best and worst configurations for memory and storage performance, providing insights into scalability, concurrency, and efficiency.<br><a href="https://github.com/mpranav38/Benchmarking-Memory-Storage" target="_blank">View on GitHub</a></p>
+            </div>
+        </div>
+        <div class="project">
+            <h2 onclick="toggleDescription('project6')"><span>▼</span>Project 5: Sort on Hadoop/Spark</h2>
+            <div id="project6" class="description">
+                <p><span class="bold-text">Objective:</span> To gain hands-on experience with the Hadoop and Spark frameworks by implementing and comparing sorting algorithms on large datasets across different virtual machine configurations.<br>
+                    <span class="bold-text">Technologies Used:</span>  Hadoop, Spark, Chameleon Cloud, Ubuntu Linux 16.04, VirtualBox, KVM, QEMU, Docker, LXC/LXD, Gensort, Valsort.<br>
+                    <span class="bold-text">Achievements:</span> <br>
+                    <span class="bold-text"></span> Implemented efficient sorting algorithms using Hadoop and Spark, handling datasets up to 64GB.<br>
+                    Optimized sorting performance across different cluster configurations, achieving significant improvements.<br>
+                    Configured and managed virtual clusters on Chameleon Cloud, ensuring optimal resource utilization.<br>
+                    <span class="bold-text">Problems Occured:</span> <br>
+                    <span class="bold-text"></span> Faced storage capacity issues due to large dataset sizes and replication requirements<br>
+                    Encountered performance bottlenecks while sorting large datasets<br>
+                    Dealt with configuration challenges in setting up Hadoop and Spark on virtual clusters<br>
+                    <span class="bold-text">Outcome:</span> <br> 
+                    <span class="bold-text"></span>Successfully implemented and benchmarked sorting algorithms on Hadoop and Spark, achieving significant performance insights<br>
+                    Optimized sorting performance across different cluster configurations<br>
+                    Generated comprehensive performance evaluation reports and visualizations, demonstrating the efficiency of various sorting techniques <br> <a href="https://github.com/mpranav38/Sort-on-Hadoop-Spark" target="_blank">View on GitHub</a></p>
+            </div>
+        </div>
+        <a href="index.html" class="home-button">Home</a>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information Security Projects - Pranav Murali</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('ba.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            color: #ffc70fe5;
+            font-weight: bolder;
+            font-size: large;
+        }
+        .container {
+            width: 60%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        header {
+            color: black;
+            text-align: center;
+            font-weight: bolder;
+            border-bottom: #34b98d 3px solid;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .project {
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .project h2 {
+            margin: 0;
+            font-size: 1.8em;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        .project h2 span {
+            margin-right: 10px;
+            font-size: 1.2em;
+            transition: transform 0.3s ease;
+        }
+        .description {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background: #e2e7a1e5;
+            color: black;
+            border-radius: 5px;
+            font-size: small;
+            font-weight: lighter;
+        }
+        .rotate {
+            transform: rotate(90deg);
+        }
+        .home-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            color: #ffc70fe5;
+            font-size: large;
+            font-weight: bolder;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .bold-text {
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function toggleDescription(id) {
+            var desc = document.getElementById(id);
+            var arrow = desc.previousElementSibling.querySelector('span');
+            if (desc.style.display === "none") {
+                desc.style.display = "block";
+                arrow.classList.add('rotate');
+            } else {
+                desc.style.display = "none";
+                arrow.classList.remove('rotate');
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Information Security Projects</h1>
+        </div>
+    </header>
+    <div class="container">
+        <div class="project">
+            <h2 onclick="toggleDescription('project1')"><span>▼</span>Project 1: Encryption, Decryption, and Brute Force attack</h2>
+            <div id="project1" class="description">
+                <p><span class="bold-text">Objective:</span> Developed a program supporting encryption, decryption, and brute force attack features using a Caesar cipher..<br>
+                    <span class="bold-text">Key Features:</span> <br>
+                    <span class="bold-text">Encryption:</span>Encrypts plaintext using a user-provided key and shift cipher, displaying the resulting ciphertext.<br>
+                    <span class="bold-text">Decryption:</span>Decrypts ciphertext using the original key, retrieving and displaying the plaintext.<br>
+                    <span class="bold-text">Brute Force Attack:</span>Attempts all possible keys to decode ciphertext without the encryption key, showing potential plaintext results. <br>
+                    <span class="bold-text">User Interaction:</span>Provides a menu for selecting encryption, decryption, or brute force attack operations.<br>
+                    <span class="bold-text">Technical Details:</span>Includes well-documented code, with error handling for invalid inputs like non-numeric keys or empty text entries.<br>
+                    <span class="bold-text">Summary:</span>Demonstrates proficiency in implementing cryptographic techniques, user interfaces, and error handling in programming.<br> <a href="https://github.com/mpranav38/Brute-Force-Attack-" target="_blank">View on GitHub</a></p>
+            </div>
+        </div>
+        <div class="project">
+            <h2 onclick="toggleDescription('project2')"><span>▼</span>Project 2: AES-DES-3DES-Encryption-and-Decryption</h2>
+            <div id="project2" class="description">
+                <p><span class="bold-text">Objective:</span>Created a command-line program that supports encryption and decryption using various techniques like substitution ciphers, transposition ciphers, and encryption algorithms.<br>
+                    <span class="bold-text">Program Features:</span><br>
+                    <span class="bold-text">Encryption Options:</span>Encryption Options: Offers choices for encryption techniques including shift, permutation, transposition ciphers, Vigenère Cipher, AES-128, DES, 3DES, and different modes like ECB, CBC, CFB, OFB.<br>
+                    <span class="bold-text"> User Input:</span>Prompts the user to enter a plaintext message, choose or generate an encryption key, and select the encryption technique.<br>
+                    <span class="bold-text">Encryption Process:</span>Encrypts the message using the chosen technique and displays the resulting ciphertext.<br>
+                    <span class="bold-text">Decryption Option:</span>Allows decryption of the ciphertext by selecting the corresponding decryption method and key, displaying the original plaintext.<br>
+                    <span class="bold-text">Summary:</span>Showcases skills in implementing a diverse range of cryptographic techniques in a command-line interface with flexible user input and key management.<br> <a href="https://github.com/mpranav38/AES-DES-3DES-Encryption-and-Decryption" target="_blank">View on GitHub</a></p>
+            </div>
+        </div>
+        <div class="project">
+            <h2 onclick="toggleDescription('project3')"><span>▼</span>Lab 1: MD5-Collision-Attack</h2>
+            <div id="project3" class="description">
+                <p><span class="bold-text">Objective:</span>The lab assignment focused on understanding and exploiting the weaknesses of the MD5 hashing algorithm, particularly its collision resistance property<br>
+                    <span class="bold-text">Lab Tasks:</span><br>
+                    <span class="bold-text">Task 1: Generating Two Different Files with the Same MD5 Hash:</span>The main objecctiove is to use the md5collgen tool to generate two different binary files that share the same MD5 hash but contain different contents. The task also includes understanding the effects of file length on the hashing process. <br>
+                    <span class="bold-text">Task 2: Understanding MD5’s Property</span>The task explores the property of MD5 that states if two inputs M and N have the same MD5 hash, then adding the same suffix to both will result in the same hash. Students are expected to design an experiment to demonstrate this property. <br>
+                    <span class="bold-text">Task 3: Generating Two Executable Files with the Same MD5 Hash</span>Need to create two versions of a simple C program such that their MD5 hashes are identical, but the programs contain different data (specifically in an array) and behave differently. <br>
+                    <span class="bold-text">Task 4: Making the Two Programs Behave Differently</span>This task extends Task 3 by requiring students to create two programs that not only have the same MD5 hash but also execute different instructions (benign vs. malicious behavior). The task discusses how to manipulate binary files to achieve this, with one approach involving the use of two arrays whose contents determine whether benign or malicious code is executed. <br>
+                
+            
+        
+                   
+                    
+                    <span class="bold-text">Summary:</span>This lab is designed to provide hands-on experience with hash functions, demonstrating the practical implications of cryptographic weaknesses in MD5 by enabling students to see the effects of collision attacks firsthand.<br> <a href="https://github.com/mpranav38/MD5-Collision-Attack" target="_blank">View on GitHub</a></p>
+            </div>
+        </div>
+        <div class="project">
+            <h2 onclick="toggleDescription('project4')"><span>▼</span>Lab 2:SQL-Injection</h2>
+            <div id="project4" class="description">
+                <p><span class="bold-text">Overview:</span>SQL injection is a code injection technique that exploits vulnerabilities in web applications, particularly when user inputs are not properly validated before being sent to the database. It is one of the most common attacks on web applications and can lead to unauthorized access, data theft, or data manipulation.<br>
+                    <span class="bold-text">Lab Environment:</span>The lab uses a vulnerable web application hosted on a pre-built Ubuntu 16.04 VM. The web application simulates an employee management system where SQL injection vulnerabilities are intentionally present.<br>
+                    <span class="bold-text">Lab Tasks:</span><br>
+                    <span class="bold-text"></span>Task 1: Familiarization with SQL Statements<br>
+                    <span class="bold-text"></span>Task 2: SQL Injection Attack on SELECT Statement<br>
+                    <span class="bold-text"></span>Task 3: SQL Injection Attack on UPDATE Statement<br>
+                    <span class="bold-text"></span>Task 4: Countermeasure - Prepared Statement<br>
+                    <span class="bold-text">Key Concepts:</span><br>
+                    <span class="bold-text">SQL Injection:</span>A vulnerability that allows attackers to execute arbitrary SQL code by manipulating input data.<br>
+                    <span class="bold-text">Prepared Statements:</span>A defense mechanism where SQL code is precompiled with placeholders, ensuring user inputs are treated as data and not executable code.<br>
+                     
+                    <span class="bold-text">Summary:</span>By completing this lab, you will gain practical experience in identifying and exploiting SQL injection vulnerabilities, as well as implementing effective countermeasures to protect web applications from such attacks.<br><a href="https://github.com/mpranav38/SQL-Injection" target="_blank">View on GitHub</a></p>
+            </div>
+        </div>
+        <div class="project">
+            <h2 onclick="toggleDescription('project6')"><span>▼</span>Lab 3: Secret-Key-Encryption</h2>
+            <div id="project6" class="description">
+                <p><span class="bold-text">Objective:</span>To understand secret-key encryption concepts, including algorithms, encryption modes, and initialization vectors (IVs), through a series of practical tasks.<br>
+                    <span class="bold-text">Technologies Used:</span>openssl for encryption and decryption, hex editors for binary manipulation, and frequency analysis tools for deciphering monoalphabetic ciphers.<br>
+                    <span class="bold-text">Key Features:</span> <br>
+                    <span class="bold-text"></span> 
+
+                    Frequency Analysis: Decoded a monoalphabetic cipher using frequency analysis.<br>
+                    Encryption Tasks: Experimented with various ciphers and modes (e.g., AES, CBC, CFB, ECB), analyzing encryption results and padding.<br>
+                    Image Encryption: Compared ECB and CBC modes by encrypting and examining BMP images.<br>
+                    Padding Exploration: Investigated PKCS#5 padding by encrypting files of varying sizes and observing padding effects.<br>
+                    Error Propagation: Analyzed the impact of single-bit corruption on data recovery across different encryption modes.<br>
+                    IV Management: Tested the effects of IV uniqueness and predictability on encryption security.<br>
+                    <span class="bold-text">Summary:</span>Acquired practical skills in encryption, addressing tasks related to cipher decoding, encryption mode comparison, padding analysis, error propagation, and IV security to enhance understanding of cryptographic principles and data protection.<br> <a href="https://github.com/mpranav38/Secret-Key-Encryption" target="_blank">View on GitHub</a></p>
+            </div>
+        </div>
+        <a href="index.html" class="home-button">Home</a>
+    </div>
+</body>
+</html>

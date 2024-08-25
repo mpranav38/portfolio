@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pranav Murali's Portfolio</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('back.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #e2e7a1e5;
+            font-weight: bold;
+            font-size: large;
+        }
+        .container {
+            width: 60%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        header {
+           
+            color: #e2e7a1e5;
+            padding: 20px 0;
+            text-align: center;
+            font-weight: bolder;
+            border-bottom: #77aaff 3px solid;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        nav {
+            text-align: center;
+            margin: 20px 0;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #e2e7a1e5;
+            font-weight: bolder;
+            font-size: 1.2em;
+        }
+        nav a:hover {
+            color: #77aaff;
+        }
+        .profile-photo {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .profile-photo img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            border: 5px solid #333;
+        }
+        .section {
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: black;
+        }
+        .about section {
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: black;
+            background: black;
+        }
+        .skills, .education, .projects {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .skills div {
+            flex: 1;
+            margin: 10px;
+            padding: 10px;
+            background: black;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .education div {
+            flex: 1;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            font-size: larger;
+        }
+        .projects div {
+            flex: 1;
+            margin: 5px;
+            padding: 10px;
+            background: black;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .projects button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            background: black;
+            color: #e2e7a1e5;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: background 0.3s ease;
+        }
+        .projects button:hover {
+            background: #555;
+        }
+        .education button {
+            display: block;
+            width: 100%;
+            padding: 0;
+            margin: 10px 0;
+            background: none;
+            color: #e2e7a1e5;
+            border: none;
+            cursor: pointer;
+            font-size: small;
+            text-align: left;
+            transition: color 0.3s ease;
+        }
+        .education button:hover {
+            color: #77aaff;
+        }
+        .description {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background: #333;
+            border-radius: 5px;
+            font-size: small;
+        }
+    </style>
+    <script>
+        function showDescription(id) {
+            var desc = document.getElementById(id);
+            if (desc.style.display === "none") {
+                desc.style.display = "block";
+            } else {
+                desc.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Pranav Murali's Portfolio</h1>
+        </div>
+    </header>
+    <nav>
+        <a href="#about">About Me</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <div class="container">
+        <div class="profile-photo">
+            <img src="photo.jpg" alt="Pranav Murali">
+        </div>
+        <section id="about" class="section">
+            <h2>About Me</h2>
+            <p>Hello! I'm Pranav Murali, a passionate software developer. As a dedicated software developer, I thrive on solving complex problems and creating innovative solutions. With a strong foundation in programming languages and a keen eye for detail, I excel in designing, developing, and maintaining software applications. My passion for technology drives me to stay updated with the latest industry trends and continuously improve my skills. Whether working independently or as part of a team, I am committed to delivering high-quality code and ensuring seamless user experiences. My ability to adapt to new challenges and my enthusiasm for learning make me a valuable asset in the ever-evolving world of software development.</p>
+        </section>
+        <section id="education" class="section">
+            <h2>Education</h2>
+            <div class="education">
+                <div>
+                    Illinois Institute of Technology <br>
+                    Master of Science in Computer Science
+                    <button onclick="showDescription('btech')">More Details</button>
+                    <div id="btech" class="description">
+                        I completed my Bachelor of Technology in Computer Science, where I gained a solid foundation in programming, algorithms, and software engineering principles.
+                    </div>
+                </div>
+                <div>
+                    Jain University <br>
+                    Bachelor of Technology in Information Science
+                    <button onclick="showDescription('msse')">More Details</button>
+                    
+                    <div id="msse" class="description">
+                        I earned my Master of Science in Software Engineering, focusing on advanced software development techniques, project management, and emerging technologies.
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="projects" class="section">
+            <h2>Projects</h2>
+            <div class="projects">
+                <div><button onclick="location.href='software.html'">Software Projects</button></div>
+                <div><button onclick="location.href='cloud.html'">Cloud Projects</button></div>
+                <div><button onclick="location.href='informationsecurity.html'">Information Security Projects</button></div>
+            </div>
+        </section>
+        <section id="skills" class="section">
+            <h2>Skills</h2>
+            <div class="skills">
+                <div>Flutter</div>
+                <div>Dart</div>
+                <div>Machine Learning</div>
+                <div>Java</div>
+                <div>HTML & CSS</div>
+                <div>C Programming</div>
+                <div>C++</div>
+                <div>JavaScript</div>
+                <div>Oracle SQL</div>
+                <div>MongoDB</div>
+                <div>Python</div>
+                <div>Linux</div>
+                <div>BashScript</div>
+                <div>MS Office</div>
+                <div>Cloud Computing</div>
+                <div>AI</div>
+                <div>Android Studio</div>
+                <div>Cloud Computing</div>
+                <div>Chameloan Cloud</div>
+            </div>
+        </section>
+        <section id="contact" class="section">
+            <h2>Contact</h2>
+            <p>If you'd like to get in touch, feel free to reach out via email at <a href="pmurali6@hawk.iit.edu">pmurali6@hawk.iit.edu</a> or connect with me on <a href="https://www.linkedin.com/in/pranavmurali1" target="_blank">LinkedIn</a>.</p>
+        </section>
+    </div>
+</body>
+</html>
