@@ -413,14 +413,109 @@
       background: linear-gradient(135deg, #b48bff, #00f0ff);
       transform: translateY(-2px);
     }
+
+    .intro {
+  text-align: center;
+  margin-top: -10px;
+  animation: fadeInUp 1.2s ease-out;
+}
+
+.intro-line {
+  font-size: 3em;
+  font-weight: bold;
+  color: var(--primary-color);
+  text-shadow: 0 0 12px var(--accent-color);
+  animation: glowText 2s infinite alternate;
+}
+
+.subtitle {
+  font-size: 1.2em;
+  color: var(--text-color);
+  margin-top: 10px;
+  opacity: 0;
+  animation: fadeIn 1s ease 1.6s forwards;
+}
+
+/* Typing cursor */
+.cursor {
+  display: inline-block;
+  color: var(--accent-color);
+  animation: blink 0.8s infinite;
+}
+
+/* Animations */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glowText {
+  from {
+    text-shadow: 0 0 8px var(--primary-color);
+  }
+  to {
+    text-shadow: 0 0 20px var(--accent-color), 0 0 30px var(--primary-color);
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.floating {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.pulse-glow {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    text-shadow: 0 0 6px var(--primary-color);
+  }
+  50% {
+    text-shadow: 0 0 20px var(--accent-color);
+  }
+}
+
+
   </style>
 </head>
 <body>
   <div id="vanta-bg"></div>
   <div class="container">
-    <header>
-      <h1>Hello, I'm Pranav Murali</h1>
-    </header>
+    <header class="intro">
+        <h1 class="intro-line"><span class="typed-text"></span><span class="cursor">|</span></h1>
+      </header>
+      
 
     <nav>
       <a href="#about">About Me</a>
@@ -434,13 +529,13 @@
       <img src="photo.jpg" alt="Pranav Murali" />
     </div>
 
-    <section id="about" class="section">
+    <section id="about" class="section reveal">
       <h2>About Me</h2>
       <p>I’m a passionate Computer Science graduate student at the Illinois Institute of Technology with a strong background in software development, cloud infrastructure, and DevOps automation. With hands-on experience at companies like Adobe and Riversand Technologies, I’ve built scalable backend systems, automated cloud deployments, and developed innovative solutions using technologies like Python, Java, Docker, AWS, and Kubernetes. I’m especially drawn to blending emerging technologies with real-world impact—whether it's through accessible authentication systems using machine learning or optimizing cloud environments for academic use. Outside of tech, I thrive on teamwork, creativity, and leadership—qualities I’ve honed as a soccer team captain, an esports champion, and an active volunteer in student communities. I’m always eager to learn, build, and collaborate on projects that make a meaningful difference.</p>
     </section>
 
     <!-- Education Section -->
-    <section id="education" class="section">
+    <section id="education" class="section reveal">
       <h2>Education</h2>
       <div class="education-grid">
         <div class="education-card">
@@ -471,7 +566,7 @@
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="section">
+    <section id="experience" class="section reveal">
       <h2>Work Experience</h2>
       <div class="timeline">
         <div class="timeline-item">
@@ -514,7 +609,7 @@
     </section>
 
     <!-- Technical Skills Section -->
-    <section id="skills" class="section">
+    <section id="skills" class="section reveal">
       <h2>Technical Skills</h2>
       <div class="skills-grid">
         <div class="skill-card">
@@ -552,7 +647,7 @@
       </div>
     </section>
 
-    <section id="projects" class="section">
+    <section id="projects" class="section reveal">
         <h2>Projects</h2>
         <div class="skills-grid">
           <div class="skill-card">
@@ -571,7 +666,7 @@
       </section>
 
     <!-- Contact -->
-    <section id="contact" class="section">
+    <section id="contact" class="section reveal">
         <h2>Contact Me</h2>
         <div class="contact-container">
           <!-- Left Side: Contact Info -->
@@ -644,5 +739,55 @@
       spacing: 18.00
     });
   </script>
+
+<script>
+    const phrases = ["Hi, I'm Pranav Murali", "A Software Developer", "Cloud Enthusiast", "Problem Solver"];
+    const typedText = document.querySelector(".typed-text");
+    const cursor = document.querySelector(".cursor");
+  
+    let currentPhraseIndex = 0;
+    let currentCharIndex = 0;
+    let isDeleting = false;
+  
+    function type() {
+      const currentPhrase = phrases[currentPhraseIndex];
+      if (isDeleting) {
+        typedText.textContent = currentPhrase.substring(0, currentCharIndex--);
+        if (currentCharIndex < 0) {
+          isDeleting = false;
+          currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+          setTimeout(type, 500);
+        } else {
+          setTimeout(type, 40);
+        }
+      } else {
+        typedText.textContent = currentPhrase.substring(0, currentCharIndex++);
+        if (currentCharIndex > currentPhrase.length) {
+          isDeleting = true;
+          setTimeout(type, 1200);
+        } else {
+          setTimeout(type, 90);
+        }
+      }
+    }
+  
+    window.onload = () => setTimeout(type, 600);
+  </script>
+  
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+  
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.1 });
+  
+    reveals.forEach(el => observer.observe(el));
+  </script>
+  
 </body>
 </html>
+
