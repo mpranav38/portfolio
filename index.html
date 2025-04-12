@@ -515,6 +515,74 @@ html, body {
   overflow-x: hidden;
 }
 
+@media screen and (max-width: 768px) {
+  .container {
+    width: 95%;
+    padding: 20px 10px;
+  }
+
+  .education-grid,
+  .skills-grid,
+  .contact-container {
+    flex-direction: column !important;
+    align-items: center;
+  }
+
+  .education-card,
+  .timeline-item,
+  .skill-card,
+  .contact-form,
+  .contact-info {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .timeline::before {
+    left: 8px;
+  }
+
+  .timeline-item {
+    left: 0 !important;
+    margin-left: 20px;
+    padding-left: 20px;
+    border-left: 4px solid var(--accent-color);
+  }
+
+  .timeline-item::before {
+    left: -12px !important;
+    right: auto !important;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 10px 10px;
+    font-size: 1em;
+  }
+
+  header h1 {
+    font-size: 8vw;
+  }
+
+  .project-title {
+    font-size: 18px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .view-projects-btn {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+
+  .contact-form label,
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form button {
+    font-size: 15px;
+  }
+}
+
+
 
   </style>
 </head>
