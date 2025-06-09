@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information Security Projects - Pranav Murali</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: radial-gradient(circle at 20% 30%, #0f2027, #203a43, #2c5364);
+            color: #ffffff;
+            font-size: 1rem;
+            animation: fadeSlideIn 1.5s ease-in-out;
+        }
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.6);
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
+            animation: scaleIn 1s ease-in-out;
+        }
+        header {
+            color: #00ffe7;
+            text-align: center;
+            font-weight: bolder;
+            padding-bottom: 10px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            animation: neonGlow 1.5s ease-in-out infinite alternate;
+            text-shadow: 0 0 5px #00ffe7, 0 0 10px #00ffe7;
+        }
+        .instructions {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 0.85em;
+            color: #ffdd57;
+            animation: pulse 2s infinite;
+        }
+        .project {
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 10px;
+            background: #111;
+            transition: all 0.3s ease-in-out;
+            border: 1px solid #00ffe7;
+            animation: waitAnimation 1s ease-in-out;
+        }
+        .project:hover {
+            transform: scale(1.01);
+            box-shadow: 0 0 20px #00ffe7;
+        }
+        .project h2 {
+            margin: 0;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            color: #00ffe7;
+            transition: color 0.3s ease;
+        }
+        .project h2 span {
+            margin-right: 10px;
+            font-size: 0.8em;
+            transition: transform 0.3s ease;
+            color: #ffdd57;
+        }
+        .description {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background: #222;
+            color: #e0e0e0;
+            border-radius: 5px;
+            font-size: 0.9em;
+            animation: fadeInDescription 0.5s ease-in-out;
+        }
+        .rotate {
+            transform: rotate(90deg);
+        }
+        .home-button {
+            display: block;
+            margin: 30px auto 10px;
+            padding: 10px 25px;
+            color: #00ffe7;
+            background: none;
+            border: 2px solid #00ffe7;
+            font-size: 1rem;
+            text-align: center;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .home-button:hover {
+            background: #00ffe7;
+            color: black;
+        }
+        .bold-text {
+            font-weight: bold;
+            color: #ffdd57;
+        }
+        @media only screen and (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 15px;
+            }
+            header h1 {
+                font-size: 1.6em;
+            }
+            .project h2 {
+                font-size: 1.1em;
+            }
+            .description {
+                font-size: 0.85em;
+            }
+        }
+        @keyframes fadeInDescription {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeSlideIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes scaleIn {
+            0% { transform: scale(0.95); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.6; }
+            100% { opacity: 1; }
+        }
+        @keyframes waitAnimation {
+            0% { opacity: 0; transform: scale(0.85); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        @keyframes neonGlow {
+            from { text-shadow: 0 0 5px #00ffe7, 0 0 10px #00ffe7; }
+            to { text-shadow: 0 0 10px #00ffe7, 0 0 20px #00ffe7; }
+        }
+    </style>
+    <script>
+        function toggleDescription(id) {
+            const desc = document.getElementById(id);
+            const span = desc.previousElementSibling.querySelector('span');
+            const isVisible = desc.style.display === 'block';
+
+            document.querySelectorAll('.description').forEach(el => el.style.display = 'none');
+            document.querySelectorAll('.project h2 span').forEach(el => el.classList.remove('rotate'));
+
+            if (!isVisible) {
+                desc.style.display = 'block';
+                span.classList.add('rotate');
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🛡️ Information Security Projects </h1>
+            <div class="instructions">Click the dropdown arrow next to each project to view full details.</div>
+        </div>
+    </header>
+    <div class="container">
+
+        <div class="project">
+    <h2 onclick="toggleDescription('project1')"><span>▶</span>Project 1: DevSecOps Automation with GenAI-Driven Virtual Teams Using Scrum and Waterfall</h2>
+    <div id="project1" class="description">
+        <p>
+            <span class="bold-text">Objective:</span> Designed and implemented a two-phase DevSecOps automation pipeline integrating Waterfall and Scrum methodologies, powered by GenAI-led virtual teams to streamline secure software delivery.<br>
+            
+            <span class="bold-text">Technologies Used:</span> AutoGen, LangChain, CI/CD, SAST, DAST, Infrastructure as Code (IaC), Jupyter Notebook.<br>
+            
+            <span class="bold-text">Features:</span>
+            <ul>
+                <li><strong>Phase 1 – Waterfall:</strong> Established core DevSecOps pipeline components including CI/CD automation, security testing, and IaC provisioning with sequential task execution by virtual agents in roles like System Engineer, Test Engineer, and Documentation Engineer.</li>
+                <li><strong>Phase 2 – Scrum:</strong> Introduced agile sprint cycles and roles (Scrum Master, Product Owner, Business Analyst) driven by GenAI agents to enable iterative development, agile ceremonies, and adaptive enhancements.</li>
+                <li>Conducted 4 structured experiments showcasing GenAI-led task coordination: sequence communication, round-robin assignment, nested task workflows, and adaptive roles for complex pipelines.</li>
+            </ul>
+
+            <span class="bold-text">Challenges Addressed:</span> Merged traditional and agile SDLC models using AI agents to simulate real-world team dynamics, improve DevSecOps scalability, and ensure continuous security testing.<br>
+
+            <span class="bold-text">Achievements:</span> Demonstrated measurable gains in CI/CD efficiency and security through SAST/DAST integrations, improved collaboration via virtual team orchestration, and created extensive onboarding and training documentation.<br>
+
+            <a href="https://github.com/ssrivastav01/DevSecOps-Automation-Led-by-GenAI-Virtual-Teams-using-Scrum-and-Waterfall" target="_blank">View on GitHub</a>
+        </p>
+    </div>
+</div>
+
+        <div class="project">
+            <h2 onclick="toggleDescription('project2')"><span>▶</span>Project 2: Encryption, Decryption, and Brute Force attack</h2>
+            <div id="project2" class="description">
+                <p><span class="bold-text">Objective:</span> Developed a program supporting encryption, decryption, and brute force attack features using a Caesar cipher..<br>
+                    <span class="bold-text">Key Features:</span> <br>
+                    <span class="bold-text">Encryption:</span>Encrypts plaintext using a user-provided key and shift cipher, displaying the resulting ciphertext.<br>
+                    <span class="bold-text">Decryption:</span>Decrypts ciphertext using the original key, retrieving and displaying the plaintext.<br>
+                    <span class="bold-text">Brute Force Attack:</span>Attempts all possible keys to decode ciphertext without the encryption key, showing potential plaintext results. <br>
+                    <span class="bold-text">User Interaction:</span>Provides a menu for selecting encryption, decryption, or brute force attack operations.<br>
+                    <span class="bold-text">Technical Details:</span>Includes well-documented code, with error handling for invalid inputs like non-numeric keys or empty text entries.<br>
+                    <span class="bold-text">Summary:</span>Demonstrates proficiency in implementing cryptographic techniques, user interfaces, and error handling in programming.<br> <a href="https://github.com/mpranav38/Brute-Force-Attack-" target="_blank">View on GitHub</a></p>
+            </div>
+        </div>
+        <div class="project">
+            <h2 onclick="toggleDescription('project3')"><span>▶</span>Project 3: AES-DES-3DES-Encryption-and-Decryption</h2>
+            <div id="project3" class="description">
+                <p><span class="bold-text">Objective:</span>Created a command-line program that supports encryption and decryption using various techniques like substitution ciphers, transposition ciphers, and encryption algorithms.<br>
+                    <span class="bold-text">Program Features:</span><br>
+                    <span class="bold-text">Encryption Options:</span>Encryption Options: Offers choices for encryption techniques including shift, permutation, transposition ciphers, Vigenère Cipher, AES-128, DES, 3DES, and different modes like ECB, CBC, CFB, OFB.<br>
+                    <span class="bold-text"> User Input:</span>Prompts the user to enter a plaintext message, choose or generate an encryption key, and select the encryption technique.<br>
+                    <span class="bold-text">Encryption Process:</span>Encrypts the message using the chosen technique and displays the resulting ciphertext.<br>
+                    <span class="bold-text">Decryption Option:</span>Allows decryption of the ciphertext by selecting the corresponding decryption method and key, displaying the original plaintext.<br>
+                    <span class="bold-text">Summary:</span>Showcases skills in implementing a diverse range of cryptographic techniques in a command-line interface with flexible user input and key management.<br> <a href="https://github.com/mpranav38/AES-DES-3DES-Encryption-and-Decryption" target="_blank">View on GitHub</a></p>
+            </div>
+        </div>
+        
+
+        <div class="project">
+            <h2 onclick="toggleDescription('project4')"><span>▶</span>Lab 1:SQL-Injection</h2>
+            <div id="project4" class="description">
+                <p><span class="bold-text">Overview:</span>SQL injection is a code injection technique that exploits vulnerabilities in web applications, particularly when user inputs are not properly validated before being sent to the database. It is one of the most common attacks on web applications and can lead to unauthorized access, data theft, or data manipulation.<br>
+                    <span class="bold-text">Lab Environment:</span>The lab uses a vulnerable web application hosted on a pre-built Ubuntu 16.04 VM. The web application simulates an employee management system where SQL injection vulnerabilities are intentionally present.<br>
+                    <span class="bold-text">Lab Tasks:</span><br>
+                    <span class="bold-text"></span>Task 1: Familiarization with SQL Statements<br>
+                    <span class="bold-text"></span>Task 2: SQL Injection Attack on SELECT Statement<br>
+                    <span class="bold-text"></span>Task 3: SQL Injection Attack on UPDATE Statement<br>
+                    <span class="bold-text"></span>Task 4: Countermeasure - Prepared Statement<br>
+                    <span class="bold-text">Key Concepts:</span><br>
+                    <span class="bold-text">SQL Injection:</span>A vulnerability that allows attackers to execute arbitrary SQL code by manipulating input data.<br>
+                    <span class="bold-text">Prepared Statements:</span>A defense mechanism where SQL code is precompiled with placeholders, ensuring user inputs are treated as data and not executable code.<br>
+                     
+                    <span class="bold-text">Summary:</span>By completing this lab, you will gain practical experience in identifying and exploiting SQL injection vulnerabilities, as well as implementing effective countermeasures to protect web applications from such attacks.<br><a href="https://github.com/mpranav38/SQL-Injection" target="_blank">View on GitHub</a></p>
+            </div>
+        </div>
+        <div class="project">
+            <h2 onclick="toggleDescription('project6')"><span>▶</span>Lab 2: Secret-Key-Encryption</h2>
+            <div id="project6" class="description">
+                <p><span class="bold-text">Objective:</span>To understand secret-key encryption concepts, including algorithms, encryption modes, and initialization vectors (IVs), through a series of practical tasks.<br>
+                    <span class="bold-text">Technologies Used:</span>openssl for encryption and decryption, hex editors for binary manipulation, and frequency analysis tools for deciphering monoalphabetic ciphers.<br>
+                    <span class="bold-text">Key Features:</span> <br>
+                    <span class="bold-text"></span> 
+
+                    Frequency Analysis: Decoded a monoalphabetic cipher using frequency analysis.<br>
+                    Encryption Tasks: Experimented with various ciphers and modes (e.g., AES, CBC, CFB, ECB), analyzing encryption results and padding.<br>
+                    Image Encryption: Compared ECB and CBC modes by encrypting and examining BMP images.<br>
+                    Padding Exploration: Investigated PKCS#5 padding by encrypting files of varying sizes and observing padding effects.<br>
+                    Error Propagation: Analyzed the impact of single-bit corruption on data recovery across different encryption modes.<br>
+                    IV Management: Tested the effects of IV uniqueness and predictability on encryption security.<br>
+                    <span class="bold-text">Summary:</span>Acquired practical skills in encryption, addressing tasks related to cipher decoding, encryption mode comparison, padding analysis, error propagation, and IV security to enhance understanding of cryptographic principles and data protection.<br> <a href="https://github.com/mpranav38/Secret-Key-Encryption" target="_blank">View on GitHub</a></p>
+            </div>
+        </div>
+                <div class="project">
+            <h2 onclick="toggleDescription('project6')"><span>▶</span>Lab 3: MD5-Collision-Attack</h2>
+            <div id="project6" class="description">
+                <p><span class="bold-text">Objective:</span>The lab assignment focused on understanding and exploiting the weaknesses of the MD5 hashing algorithm, particularly its collision resistance property<br>
+                    <span class="bold-text">Lab Tasks:</span><br>
+                    <span class="bold-text">Task 1: Generating Two Different Files with the Same MD5 Hash:</span>The main objecctiove is to use the md5collgen tool to generate two different binary files that share the same MD5 hash but contain different contents. The task also includes understanding the effects of file length on the hashing process. <br>
+                    <span class="bold-text">Task 2: Understanding MD5’s Property</span>The task explores the property of MD5 that states if two inputs M and N have the same MD5 hash, then adding the same suffix to both will result in the same hash. Students are expected to design an experiment to demonstrate this property. <br>
+                    <span class="bold-text">Task 3: Generating Two Executable Files with the Same MD5 Hash</span>Need to create two versions of a simple C program such that their MD5 hashes are identical, but the programs contain different data (specifically in an array) and behave differently. <br>
+                    <span class="bold-text">Task 4: Making the Two Programs Behave Differently</span>This task extends Task 3 by requiring students to create two programs that not only have the same MD5 hash but also execute different instructions (benign vs. malicious behavior). The task discusses how to manipulate binary files to achieve this, with one approach involving the use of two arrays whose contents determine whether benign or malicious code is executed. <br>
+                
+            
+        
+                   
+                    
+                    <span class="bold-text">Summary:</span>This lab is designed to provide hands-on experience with hash functions, demonstrating the practical implications of cryptographic weaknesses in MD5 by enabling students to see the effects of collision attacks firsthand.<br> <a href="https://github.com/mpranav38/MD5-Collision-Attack" target="_blank">View on GitHub</a></p>
+            </div>
+        </div>
+        <a href="index.html" class="home-button">Home</a>
+    </div>
+</body>
+</html>
