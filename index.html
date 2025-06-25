@@ -21,7 +21,7 @@
       background: transparent;
       overflow-x: hidden;
     }
-
+  
     #vanta-bg {
       position: fixed;
       top: 0;
@@ -581,91 +581,6 @@ html, body {
     font-size: 15px;
   }
 }
-/* GLOBAL FIXES */
-* {
-  box-sizing: border-box;
-}
-
-html, body {
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-.container, .section, .education-card, .timeline-item,
-.skill-card, .contact-form, .contact-info {
-  max-width: 100%;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-}
-
-/* RESPONSIVE FIXES FOR MOBILE */
-@media screen and (max-width: 768px) {
-  .container {
-    width: 95%;
-    padding: 20px 10px;
-  }
-
-  .education-grid,
-  .skills-grid,
-  .contact-container {
-    flex-direction: column !important;
-    align-items: center;
-  }
-
-  .education-card,
-  .timeline-item,
-  .skill-card,
-  .contact-form,
-  .contact-info {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 auto;
-  }
-
-  .timeline::before {
-    left: 8px;
-  }
-
-  .timeline-item {
-    left: 0 !important;
-    margin-left: 20px;
-    padding-left: 20px;
-    border-left: 4px solid var(--accent-color);
-  }
-
-  .timeline-item::before {
-    left: -12px !important;
-    right: auto !important;
-  }
-
-  nav a {
-    display: inline-block;
-    margin: 10px 10px;
-    font-size: 1em;
-  }
-
-  header h1 {
-    font-size: 8vw;
-  }
-
-  .project-title {
-    font-size: 18px;
-    text-align: center;
-    justify-content: center;
-  }
-
-  .view-projects-btn {
-    font-size: 14px;
-    padding: 10px 20px;
-  }
-
-  .contact-form label,
-  .contact-form input,
-  .contact-form textarea,
-  .contact-form button {
-    font-size: 15px;
-  }
-}
 
 
 
@@ -745,25 +660,32 @@ html, body {
           
           <div class="timeline-item">
             <h3>Technical Consultant 1</h3>
-            <h4>Adobe, Bangalore, India</h4>
+            <h4>Concentrix, Bangalore, India</h4>
             <h4>Feb 2023 – Aug 2023</h4>
             <ul>
-              <li>Developed automation tools for Creative Cloud using Node.js and JavaScript.</li>
-              <li>Built chat/call routing features for OAC leveraging AWS Lambda, SQS, and API Gateway.</li>
-              <li>Implemented secure PDF processing features and backend database tooling with Docker.</li>
-              <li>Enhanced user workflows by integrating with internal Adobe systems via APIs.</li>
+              <li>Integrated Braintree and Adyen using Java and REST APIs to support real-time charge and subscription tracking, reducing support wait times by 25% and contributing to over $108K in annual revenue retention real-time analytics access for internal customer-facing teams</li>
+              <li>Built intelligent routing logic for Adobe OAC leveraging Java, AWS Lambda, API Gateway, and DynamoDB, which improved agent connectivity by 33% and accelerated customer response flows</li>
+              <li>Engineered scalable backend data pipelines for Hendrix using Java, SQL, Docker, Jenkins, and GitLab, reducing data latency by 40% and enabling</li>            
             </ul>
           </div>
-          
+          <div class="timeline-item">
+            <h3>Associate Software Engineer</h3>
+            <h4>St. John Ambulance, Bangalore, India</h4>
+            <h4>Jun 2022 – Feb 2023</h4>
+            <ul>
+              <li>Developed backend scheduling modules using Java Spring Boot, .NET Core, and PostgreSQL, automating 500+ monthly first-aid requests and reducing manual effort by 70%, saving the organization over $14,000</li>
+              <li>Designed and implemented a secure, responsive volunteer portal with React.js, Node.js, and RESTful APIs, boosting volunteer registration rates by 40% and enhancing user engagement</li>
+              <li>IIntegrated third-party emergency response APIs and built real-time notification systems using C#, Node.js, WebSockets, and Azure Event Grid, reducing incident response times by 30% and ensuring scalable, reliable communication</li>
+            </ul>
+          </div>
           <div class="timeline-item">
             <h3>Full Stack Developer</h3>
             <h4>Riversand Technologies, Bangalore, India</h4>
             <h4>Jul 2021 – Oct 2021</h4>
             <ul>
-              <li>Developed backend microservices in Java with RESTful architecture.</li>
-              <li>Built real-time data flows using Apache Kafka and Storm for enterprise ingestion.</li>
-              <li>Collaborated with frontend engineers to deliver data-driven UIs in Python.</li>
-              <li>Improved modularity and deployment with a microservice-based design.</li>
+              <li>Designed and delivered modular backend microservices for Syndigo’s cloud-native Master Data Management (MDM) platform using Java andPython, leveraging OOP and proven design patterns to handle complex product and customer data at scale.</li>
+              <li>Built and optimized real-time event pipelines with Apache Kafka and Storm, enabling reliable processing of key MDM/PIM events such as productupdates and supplier onboarding — reducing data lag by 30% and improving system resilience.</li>
+              <li>Implemented robust CI/CD automation using GitLab CI and Docker, streamlining the build and deployment lifecycle and ensuring faster, faulttolerant releases across multi-environment cloud infrastructure.</li>  
             </ul>
           </div>
           
@@ -867,7 +789,7 @@ html, body {
       
 
     <div class="download-resume">
-      <a href="https://raw.githubusercontent.com/mpranav38/portfolio/main/Resume%20-%20Pranav.pdf" target="_blank">Download My Resume (PDF)</a>
+      <a href="https://raw.githubusercontent.com/mpranav38/portfolio/main/Pranav%20Resume.pdf" target="_blank">Download My Resume (PDF)</a>
     </div>
   </div>
 
