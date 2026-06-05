@@ -1,5 +1,5 @@
 /* ==========================================================================
-   MAIN CORE APPLICATION ORCHESTRATOR WITH AUDIO & THEME ENGINE
+   MAIN CORE APPLICATION ORCHESTRATOR WITH BACKGROUND MUSIC ENGINE
    ========================================================================== */
 
 /* ── CURSOR INTERACTION ENGINE ── */
@@ -228,7 +228,7 @@ if (form) {
   });
 }
 
-/* ── COSMIC AUDIO ENGINE & THEME CONTROLLER ── */
+/* ── DEDICATED BACKGROUND MUSIC ENGINE & THEME CONTROLLER ── */
 const themeBtn = document.getElementById('theme-toggle');
 const bodyEl = document.body;
 
@@ -237,65 +237,34 @@ if (themeBtn) {
     bodyEl.classList.toggle('supernova');
     const isSupernova = bodyEl.classList.contains('supernova');
     themeBtn.innerHTML = isSupernova ? `<i class="fas fa-moon"></i>` : `<i class="fas fa-sun"></i>`;
-    if (window.playCosmicSound) window.playCosmicSound('click');
   });
 }
 
-let audioCtx = null;
 let isMuted = true;
 const audioBtn = document.getElementById('audio-toggle');
 
-function initAudio() {
-  if (!audioCtx) {
-    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-  }
-}
-
-window.playCosmicSound = function(type) {
-  if (isMuted) return;
-  initAudio();
-  if (audioCtx.state === 'suspended') audioCtx.resume();
-
-  const osc = audioCtx.createOscillator();
-  const gainNode = audioCtx.createGain();
-  osc.connect(gainNode);
-  gainNode.connect(audioCtx.destination);
-
-  const now = audioCtx.currentTime;
-
-  if (type === 'click') {
-    osc.type = 'triangle';
-    osc.frequency.setValueAtTime(800, now);
-    osc.frequency.exponentialRampToValueAtTime(150, now + 0.04);
-    gainNode.gain.setValueAtTime(0.02, now);
-    gainNode.gain.exponentialRampToValueAtTime(0.001, now + 0.04);
-    osc.start(now);
-    osc.stop(now + 0.04);
-  } 
-  else if (type === 'implode') {
-    osc.type = 'sine';
-    osc.frequency.setValueAtTime(160, now);
-    osc.frequency.exponentialRampToValueAtTime(45, now + 0.4);
-    gainNode.gain.setValueAtTime(0.15, now);
-    gainNode.gain.exponentialRampToValueAtTime(0.001, now + 0.4);
-    osc.start(now);
-    osc.stop(now + 0.4);
-  }
-};
+// Load your continuous ambient background track from the asset folder
+const bgMusic = new Audio('song.mp3');
+bgMusic.loop = true;   // Forces the track to restart seamlessly on conclusion
+bgMusic.volume = 0.25; // Sets a clean background volume profile layer (25%)
 
 if (audioBtn) {
   audioBtn.addEventListener('click', () => {
     isMuted = !isMuted;
-    initAudio();
+    
+    // Update structural UI icon styling maps dynamically
     audioBtn.innerHTML = isMuted ? `<i class="fas fa-volume-mute"></i>` : `<i class="fas fa-volume-up"></i>`;
     audioBtn.style.color = isMuted ? 'var(--muted)' : 'var(--cyan)';
     audioBtn.style.borderColor = isMuted ? 'rgba(108,47,255,0.2)' : 'var(--cyan)';
-    if (!isMuted) window.playCosmicSound('click');
+    
+    if (!isMuted) {
+      // User UNMUTED: Automatically kick off or resume background audio streaming timelines
+      bgMusic.play().catch(err => {
+        console.log("Audio playback waiting for complete page interaction:", err);
+      });
+    } else {
+      // User MUTED: Instantly pause the track without resetting the location playhead
+      bgMusic.pause();
+    }
   });
 }
-
-document.querySelectorAll('a, button, .tl-card, .sk-card, .proj-card, .cert-card, .edu-card').forEach(item => {
-  item.addEventListener('mouseenter', () => {
-    if (!isMuted) window.playCosmicSound('click');
-  });
-});
